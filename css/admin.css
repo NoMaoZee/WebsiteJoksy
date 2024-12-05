@@ -1,0 +1,63 @@
+/* Styles khusus untuk Admin Dashboard */
+.admin-panel {
+  font-family: "Be Vietnam Pro", sans-serif;
+  background: #eef7ff;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel h1 {
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.btn-home {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: #000098;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn-home:hover {
+  background-color: #2d2da4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  color: #fff;
+  background-color: #000098;
+}
+
+#loading {
+  display: none;
+  color: blue;
+  text-align: center;
+}
+
+#error {
+  display: none;
+  color: red;
+  text-align: center;
+}
