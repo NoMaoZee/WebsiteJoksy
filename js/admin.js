@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function fetchServices() {
     showLoading();
 
-    fetch("http://localhost/WebM4/get_services.php")
+    fetch("http://127.0.0.1:8000/api/services")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch services");
@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td><img src="${service.image}" alt="${service.name}" width="50" /></td>
                 <td>
                   <button onclick="editService(${service.id}, '${service.name}', ${service.price}, '${service.image}')">Edit</button>
+                  <button onclick="deleteService(${service.id})">Delete</button>
                 </td>
               </tr>
             `
@@ -68,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const image = document.getElementById("image").value;
 
     const method = id ? "PUT" : "POST";
-    const url = id ? "http://localhost/WebM4/admin.php" : "http://localhost/WebM4/admin.php";    
+    const url = "http://127.0.0.1:8000/api/services";  // Same URL for both POST and PUT
 
     fetch(url, {
       method: method,
@@ -79,28 +80,28 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         alert(data.message || "Service saved successfully");
         serviceForm.reset();
-        fetchServices();
+        fetchServices();  // Refresh the list of services
       })
       .catch((error) => console.error("Error:", error));
   }
 
-  function deleteService(e) {
-    e.preventDefault();
-
-    const id = document.getElementById("deleteId").value;
-
-    fetch("http://localhost/WebM4/admin.php", {
+  function deleteService(id) {
+    fetch("http://127.0.0.1:8000/api/services", {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: id }), // Send the ID to delete
     })
       .then((response) => response.json())
       .then((data) => {
         alert(data.message || "Service deleted successfully");
-        deleteForm.reset();
-        fetchServices();
+        fetchServices(); // Refresh the services list after deletion
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Failed to delete service");
+      });
   }
 
   window.editService = (id, name, price, image) => {
@@ -111,6 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   serviceForm.addEventListener("submit", createOrUpdateService);
-  deleteForm.addEventListener("submit", deleteService);
-  fetchServices();
+  deleteForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const id = document.getElementById("deleteId").value;
+    deleteService(id);
+  });
+
+  fetchServices(); // Initial fetch of the service list
 });
