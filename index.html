@@ -1,99 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joksky</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joksky</title>
+        <!-- Import Google Font: Be Vietnam Pro -->
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+        <!-- AOS CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/about  .css">
+    </head>
+    <>
+        <!-- Navbar -->
+        <header class="navbar" data-aos="fade-down">
+          <a href="#" class="logo">Joksky</a>
+          <nav>
+              <ul class="nav-links">
+                  <li><a href="#services">Service</a></li>
+                  <li><a href="#pricing">Pricing</a></li>
+                  <li><a href="#about">About Us</a></li>
+                  <li><a href="admin.html">Admin</a></li>
+              </ul>
+          </nav>
+      </header>
 
-    <!-- Import Google Font: Be Vietnam Pro -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
+        <!-- Hero Section -->
+        <section id="hero" class="hero" data-aos="zoom-in">
+          <div class="hero-content">
+              <h1>Discover the ease of unlimited creativity that excites you</h1>
+              <p>
+                  Find what you want here, starting from professional designers who can
+                  understand your wishes even if they cannot be implemented. So what are
+                  you waiting for let's try our jockey services
+              </p>
+              <div class="cta-buttons">
+                  <a href="#services" class="cta-button primary-cta">Get Started</a>
+                  <a href="#about" class="cta-button secondary-cta">Learn More</a>
+              </div>
+          </div>
+      </section>
 
-    <!-- AOS CSS -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      rel="stylesheet"
-    />
+        <!-- Section Services -->
+        <section id="services" class="services">
+            <h2 data-aos="fade-up">Our Services</h2>
+            <div class="row" id="services-list">
+                <!-- Dynamic Services Will Be Loaded Here --></div>
+        </section>
 
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <header class="navbar" data-aos="fade-down">
-      <div class="logo">Joksky</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#services">Service</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="admin.html">Admin</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero" data-aos="zoom-in">
-      <h1>Discover the ease of unlimited creativity that excites you</h1>
-      <p>
-        Find what you want here, starting from professional designers who can
-        understand your wishes even if they cannot be implemented. So what are
-        you waiting for let's try our jockey services
-      </p>
-    </section>
-
-    <!-- Section Services -->
-    <section id="services" class="services">
-      <h2 data-aos="fade-up">Our Services</h2>
-      <div class="row" id="services-list">
-        <!-- Dynamic Services Will Be Loaded Here -->
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <h2 data-aos="flip-up">Apa itu Joksky?</h2>
-      <p data-aos="fade-up">
-        Kami menyediakan jasa pembuatan design Aplikasi atau Website yang
-        berbasis Figma.
-      </p>
-      <div class="features">
-        <div class="feature-item" data-aos="fade-right">
-          <h4>Mobile Design</h4>
-          <p>
-            Penyediaan jasa design aplikasi mobile mulai dari wireframe hingga
-            mockup.
-          </p>
-        </div>
-        <div class="feature-item" data-aos="fade-left">
-          <h4>Website Design</h4>
-          <p>
-            Penyediaan jasa design aplikasi website mulai dari wireframe hingga
-            mockup.
-          </p>
-        </div>
-        <div class="feature-item" data-aos="fade-right">
-          <h4>Fast Build</h4>
-          <p>Pengerjaan yang cepat dan efisien waktu.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" data-aos="fade-up">
-      <div class="socials">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">Github</a>
-      </div>
-      <p>© Create by Zee 2024.</p>
-    </footer>
-
-    <!-- AOS JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
+        <!-- About Us -->
+        <section id="about" class="about">
+            <h2 data-aos="flip-up">Apa itu Joksky?</h2>
+            <p data-aos="fade-up">
+                Kami menyediakan jasa pembuatan design Aplikasi atau Website yang
+            berbasis Figma. Dengan pengalaman dan keahlian kami, kami berkomitmen
+            untuk memberikan solusi design yang inovatif dan sesuai kebutuhan Anda.
+            </p>
+            <div class="features">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <h4>
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        Mobile Design
+                    </h4>
+                    <p>
+                        Penyediaan jasa design aplikasi mobile mulai dari wireframe hingga
+                mockup. Kami menciptakan pengalaman pengguna yang intuitif dan
+                menarik untuk aplikasi mobile Anda.
+                    </p>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <h4>
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        Website Design
+                    </h4>
+                    <p>
+                        Penyediaan jasa design aplikasi website mulai dari wireframe hingga
+                mockup. Fokus kami adalah menciptakan website yang modern,
+                responsif, dan sesuai dengan brand Anda.
+                    </p>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <h4>
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        Fast Build
+                    </h4>
+                    <p>
+                        Pengerjaan yang cepat dan efisien waktu. Kami memahami pentingnya
+                ketepatan waktu dan berkomitmen untuk memberikan hasil terbaik dalam
+                timeline yang disepakati.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Paket Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <div class="pricing-header animate__animated animate__fadeIn">
+                    <h6>Pricing</h6>
+                    <h2>Explore Our Pricing Plans</h2>
+                    <p>
+                        Get premium jockey design services at transparent and pocket-friendly prices. Choose from a variety of packages tailored to meet your preferences. Start your dream design journey today!
+                    </p>
+                </div>
+                <div class="row">
+                    <!-- Plan 1 -->
+                    <div class="col-lg-4 animate__animated animate__fadeInLeft">
+                        <div class="plan-card">
+                            <div class="plan-title">30 DAYS PREMIUM + PRO</div>
+                            <div class="pricing">
+                                <span class="original-price">Rp 150.000</span>
+                                <span class="discounted-price">Rp 99.999</span>
+                            </div>
+                            <div class="plan-features">
+                                <p>1 user</p>
+                                <p>One-click access extension</p>
+                                <p>24/7 support</p>
+                                <p>Free updates</p>
+                                <p>99% uptime</p>
+                                <p>
+                                    30 days access to all shared Premium & Pro accounts (including
+                  ChatGPT Plus & ChatGPT Pro)
+                                </p>
+                            </div>
+                            <button class="btn btn-purchase">Purchase</button>
+                        </div>
+                    </div>
+                    <!-- Plan 2 (Popular) -->
+                    <div class="col-lg-4 animate__animated animate__fadeInUp">
+                        <div class="plan-card popular">
+                            <div class="popular-badge">★ POPULAR ★</div>
+                            <div class="plan-title">30 DAYS PREMIUM</div>
+                            <div class="pricing">
+                                <span class="original-price">Rp 75.000</span>
+                                <span class="discounted-price">Rp 49.999</span>
+                            </div>
+                            <div class="plan-features">
+                                <p>1 user</p>
+                                <p>One-click access extension</p>
+                                <p>24/7 support</p>
+                                <p>Free updates</p>
+                                <p>99% uptime</p>
+                                <p>
+                                    30 days access to all shared Premium accounts (including
+                  ChatGPT Plus)
+                                </p>
+                            </div>
+                            <button class="btn btn-purchase">Purchase</button>
+                        </div>
+                    </div>
+                    <!-- Plan 3 -->
+                    <div class="col-lg-4 animate__animated animate__fadeInRight">
+                        <div class="plan-card">
+                            <div class="plan-title">180 DAYS PREMIUM + THE WITCHER</div>
+                            <div class="pricing">
+                                <span class="original-price">Rp 2.250.000</span>
+                                <span class="discounted-price">Rp 1.499.999</span>
+                            </div>
+                            <div class="plan-features">
+                                <p>1 user</p>
+                                <p>One-click access extension</p>
+                                <p>24/7 support</p>
+                                <p>Free updates</p>
+                                <p>99% uptime</p>
+                                <p>
+                                    180 days access to all shared Premium & The Witcher accounts
+                  (including ChatGPT Plus)
+                                </p>
+                                <p>The Witcher role on Groupy Discord (crypto calls)</p>
+                            </div>
+                            <button class="btn btn-purchase">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="footer" data-aos="fade-up">
+          <div class="footer-content">
+              <div class="socials">
+                  <a href="#" class="social-link">
+                      <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                      </svg>
+                      Facebook
+                  </a>
+                  <a href="#" class="social-link">
+                      <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      </svg>
+                      Instagram
+                  </a>
+                  <a href="#" class="social-link">
+                      <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                      Github
+                  </a>
+              </div>
+              
+              <div class="copyright">
+                  © Create by Zee 2024. All rights reserved.
+                  <div style="margin-top: 0.5rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">
+                      Crafting beautiful digital experiences
+                  </div>
+              </div>
+          </div>
+      </footer>
+        <!-- AOS JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+        <script>
       AOS.init();
-    </script>
-    <script src="js/index.js"></script> 
-  </body>
+        </script>
+        <script src="js/index.js"></script>
+    </body>
 </html>

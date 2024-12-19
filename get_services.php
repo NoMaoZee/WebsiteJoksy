@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -27,4 +27,4 @@ header('Content-Type: application/json');
 echo json_encode($data);
 
 $conn->close();
-?>
+?> -->

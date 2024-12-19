@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const deleteForm = document.getElementById("deleteForm");
   const loadingElement = document.getElementById("loading");
   const errorElement = document.getElementById("error");
+  const submitButton = document.getElementById("submitButton");
 
   function showLoading() {
     loadingElement.style.display = "block";
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td><img src="${service.image}" alt="${service.name}" width="50" /></td>
                 <td>
                   <button onclick="editService(${service.id}, '${service.name}', ${service.price}, '${service.image}')">Edit</button>
-                  <button onclick="deleteService(${service.id})">Delete</button>
+                  
                 </td>
               </tr>
             `
@@ -68,50 +69,68 @@ document.addEventListener("DOMContentLoaded", function () {
     const price = document.getElementById("price").value;
     const image = document.getElementById("image").value;
 
-    const method = id ? "PUT" : "POST";
-    const url = "http://127.0.0.1:8000/api/services";  // Same URL for both POST and PUT
+    const method = id ? "PUT" : "POST"; // Tentukan methodnya
+    const url = id
+      ? `http://127.0.0.1:8000/api/services/${id}` // Update jika ID ada
+      : "http://127.0.0.1:8000/api/services"; // Create jika ID tidak ada
 
     fetch(url, {
       method: method,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, name, price, image }),
+      body: JSON.stringify({ name, price, image }), // Data tanpa ID dalam body
     })
       .then((response) => response.json())
       .then((data) => {
         alert(data.message || "Service saved successfully");
         serviceForm.reset();
-        fetchServices();  // Refresh the list of services
+        fetchServices(); // Refresh data
+        submitButton.textContent = "Save"; // Reset tombol ke "Save" setelah selesai
       })
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        console.error("Error:", error);
+        showError("Failed to save service.");
+      });
   }
 
   function deleteService(id) {
-    fetch("http://127.0.0.1:8000/api/services", {
+    if (!confirm("Are you sure you want to delete this service?")) {
+      return;
+    }
+
+    fetch(`http://127.0.0.1:8000/api/services/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ id: id }), // Send the ID to delete
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to delete service: " + response.statusText);
+        }
+        return response.json(); // Ambil response JSON jika statusnya ok
+      })
       .then((data) => {
         alert(data.message || "Service deleted successfully");
-        fetchServices(); // Refresh the services list after deletion
+        fetchServices(); // Refresh data setelah delete
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("Failed to delete service");
+        alert("Failed to delete service: " + error.message); // Tampilkan pesan error jika gagal
       });
   }
+
 
   window.editService = (id, name, price, image) => {
     document.getElementById("serviceId").value = id;
     document.getElementById("name").value = name;
     document.getElementById("price").value = price;
     document.getElementById("image").value = image;
+
+    submitButton.textContent = "Update"; // Ubah tombol ke "Update" ketika edit
   };
 
   serviceForm.addEventListener("submit", createOrUpdateService);
+
   deleteForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const id = document.getElementById("deleteId").value;

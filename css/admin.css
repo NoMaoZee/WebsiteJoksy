@@ -1,63 +1,185 @@
-/* Styles khusus untuk Admin Dashboard */
-.admin-panel {
-  font-family: "Be Vietnam Pro", sans-serif;
-  background: #eef7ff;
-  padding: 2rem;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 1200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+:root {
+  --dark-blue: #1a2b3c;
+  --midnight-blue: #2c3e50;
+  --light-blue: #34495e;
+  --accent-color: #3498db;
+  --white: #ecf0f1;
 }
 
-.admin-panel h1 {
-  text-align: center;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1.5rem;
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
+
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.admin-header {
+  background-color: var(--midnight-blue);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.admin-header h1 {
+  margin: 0;
+  color: var(--white);
+}
+
 
 .btn-home {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  background-color: #000098;
-  color: #fff;
+  background-color: var(--accent-color);
+  color: var(--white);
   text-decoration: none;
+  padding: 10px 15px;
   border-radius: 5px;
-  margin-bottom: 1rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
+
 
 .btn-home:hover {
-  background-color: #2d2da4;
+  background-color: #2980b9;
 }
 
-table {
+
+.admin-main {
+  display: flex;
+}
+
+
+.sidebar {
+  background-color: var(--light-blue);
+  width: 250px;
+  padding: 20px;
+}
+
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+
+
+.sidebar nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+.sidebar nav ul li a:hover {
+  background-color: var(--accent-color);
+}
+
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: var(--dark-blue);
+}
+
+
+#servicesTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  border-radius: 8px;
 }
 
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
+
+#servicesTable th, #servicesTable td {
+  border: 1px solid var(--light-blue);
+  padding: 12px;
+  text-align: left;
+  color: var(--white);
+}
+
+
+#servicesTable thead {
+  background-color: var(--midnight-blue);
+}
+
+
+.form-section {
+  background-color: var(--light-blue);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+
+.form-section h2 {
+  margin-top: 0;
+  color: var(--white);
+}
+
+
+#serviceForm, #deleteForm {
+  display: grid;
+  gap: 15px;
+}
+
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+input {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: 1px solid var(--light-blue);
+}
+
+
+button {
+  background-color: var(--accent-color);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+button:hover {
+  background-color: #0d0047;
+}
+
+
+#loading, #error {
+  color: var(--white);
   text-align: center;
+  padding: 10px;
 }
 
-th {
-  color: #fff;
-  background-color: #000098;
-}
 
-#loading {
-  display: none;
-  color: blue;
-  text-align: center;
-}
-
-#error {
-  display: none;
-  color: red;
-  text-align: center;
+@media (max-width: 768px) {
+  .admin-main {
+      flex-direction: column;
+  }
+  
+  .sidebar {
+      width: 100%;
+  }
 }
