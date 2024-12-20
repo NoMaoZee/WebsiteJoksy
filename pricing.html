@@ -3,17 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
+    <title>Admin Pricing</title>
     <link rel="stylesheet" href="css/admin.css" />
   </head>
   <body>
     <div class="admin-container">
       <header class="admin-header">
-        <h1>Admin Panel</h1>
+        <h1>Admin Panel - Pricing</h1>
         <a href="index.html" class="btn-home">Kembali ke Home</a>
       </header>
 
@@ -21,8 +17,8 @@
         <aside class="sidebar">
           <nav>
             <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="pricing.html" class="active">Pricing</a></li>
               <li><a href="#orders">Orders</a></li>
               <li><a href="#users">Users</a></li>
               <li><a href="#settings">Settings</a></li>
@@ -31,50 +27,60 @@
         </aside>
 
         <section class="content">
-          <h2>Daftar Penjoki</h2>
+          <h2>Manage Pricing</h2>
           <div id="loading">Loading...</div>
           <div id="error"></div>
 
-          <table id="servicesTable">
+          <!-- Tabel Pricing -->
+          <table id="pricingTable">
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Image</th>
+                <th>Title</th>
+                <th>Original Price</th>
+                <th>Discounted Price</th>
+                <th>Features</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Data akan diisi secara dinamis oleh JavaScript -->
+              <!-- Data pricing akan diisi lewat JavaScript -->
             </tbody>
           </table>
 
-          <!-- Formulir untuk menambah atau mengupdate layanan -->
+          <!-- Form Tambah/Edit Pricing -->
           <div class="form-section">
-            <h2>Tambah atau Update Service</h2>
-            <form id="serviceForm">
-              <input type="hidden" id="serviceId" />
+            <h2>Tambah atau Update Pricing</h2>
+            <form id="pricingForm">
+              <input type="hidden" id="pricingId" />
               <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" required />
+                <label for="title">Title:</label>
+                <input type="text" id="title" required />
               </div>
               <div>
-                <label for="price">Price:</label>
-                <input type="number" id="price" required />
+                <label for="originalPrice">Original Price:</label>
+                <input type="number" step="0.01" id="originalPrice" required />
               </div>
               <div>
-                <label for="image">Image URL:</label>
-                <input type="text" id="image" required />
+                <label for="discountedPrice">Discounted Price:</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  id="discountedPrice"
+                  required
+                />
               </div>
-              <!-- Tombol Submit untuk Create atau Update -->
+              <div>
+                <label for="features">Features (Pisahkan dengan koma):</label>
+                <input type="text" id="features" required />
+              </div>
               <button type="submit" id="submitButton">Save</button>
             </form>
           </div>
 
-          <!-- Formulir untuk menghapus layanan -->
+          <!-- Form Hapus Pricing -->
           <div class="form-section">
-            <h2>Hapus Service</h2>
+            <h2>Hapus Pricing</h2>
             <form id="deleteForm">
               <label for="deleteId">ID:</label>
               <input type="number" id="deleteId" required />
@@ -85,6 +91,6 @@
       </div>
     </div>
 
-    <script src="js/admin.js"></script>
+    <script src="js/pricing.js"></script>
   </body>
 </html>
